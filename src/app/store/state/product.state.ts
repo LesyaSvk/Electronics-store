@@ -2,7 +2,7 @@ import { Product } from '../../models';
 
 export interface ProductState {
   products: Product[];
-  error: any;
+  error: Error | null;
 }
 
 export const productInitialState: ProductState = {

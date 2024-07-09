@@ -8,6 +8,8 @@ import {
   loadProductsSuccess,
   loadProductsFailure,
 } from '../actions/product.actions';
+import { HttpResponse } from '@angular/common/http';
+import { Product } from '../../models';
 
 @Injectable()
 export class ProductEffects {
@@ -16,7 +18,9 @@ export class ProductEffects {
       ofType(loadProducts),
       mergeMap(() =>
         this.productService.filterProducts().pipe(
-          map((products) => loadProductsSuccess({ products })),
+          map((res: HttpResponse<Product[]>) =>
+            loadProductsSuccess({ products: res?.body || [] })
+          ),
           catchError((error) => of(loadProductsFailure({ error })))
         )
       )

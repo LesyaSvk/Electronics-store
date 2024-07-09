@@ -1,6 +1,6 @@
 import { ProductTypeEnum } from '../models';
 
-export function enumToArray(enumObj: any): string[] {
+export function enumToArray(enumObj: Record<string, string>): string[] {
   return Object.keys(enumObj).map((key) => enumObj[key]);
 }
 

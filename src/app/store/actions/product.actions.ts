@@ -8,5 +8,5 @@ export const loadProductsSuccess = createAction(
 );
 export const loadProductsFailure = createAction(
   '[Product] Load Products Failure',
-  props<{ error: any }>()
+  props<{ error: Error }>()
 );

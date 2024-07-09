@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../environments/environment';
@@ -19,19 +19,19 @@ export class ProductService {
   constructor(private readonly _http: HttpClient) {}
 
   filterProducts(
-    pageNumber: number = 0,
-    pageSize: number = 10,
+    pageNumber = 0,
+    pageSize = 10,
     filters?: ProductFilter
-  ): Observable<any> {
-    let rangeFilterParams = !!filters?.priceRanges
+  ): Observable<HttpResponse<Product[]>> {
+    const rangeFilterParams = filters?.priceRanges
       ? composePriceFilterParams(filters.priceRanges)
       : '';
 
-    let nameFilterParams = !!filters?.name
+    const nameFilterParams = filters?.name
       ? composeNameFilterParams(filters.name)
       : '';
 
-    let typeFilterParams = !!filters?.type
+    const typeFilterParams = filters?.type
       ? composeTypeFilterParams(filters.type)
       : '';
 

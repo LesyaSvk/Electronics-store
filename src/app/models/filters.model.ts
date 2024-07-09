@@ -1,8 +1,7 @@
 export interface ProductFilter {
-  priceRanges: [number, number][];
+  priceRanges: number[][] | null;
   name: string;
-  type: ProductTypeEnum;
-  pagination: PageFilter;
+  type: ProductTypeEnum | null;
 }
 
 export enum ProductTypeEnum {

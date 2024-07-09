@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { PriceRangeOptions, ProductTypeEnum } from '../../models';
+import {
+  PriceRangeOptions,
+  ProductFilter,
+  ProductTypeEnum,
+} from '../../models';
 import { enumToArray, defaultPriceRanges } from '../../utils';
 
 @Component({
@@ -8,10 +12,10 @@ import { enumToArray, defaultPriceRanges } from '../../utils';
   styleUrls: ['./filters.component.scss'],
 })
 export class FiltersComponent {
-  @Output() filtersChanged = new EventEmitter<any>();
+  @Output() filtersChanged = new EventEmitter<ProductFilter>();
 
-  selectedType: string = ProductTypeEnum.ALL;
-  productName: string = '';
+  selectedType = ProductTypeEnum.ALL;
+  productName = '';
   types: string[] = enumToArray(ProductTypeEnum);
   priceRanges: PriceRangeOptions[] = defaultPriceRanges;
 

@@ -6,6 +6,7 @@ import { Subject, switchMap } from 'rxjs';
 import { ProductFilter, Product } from '../../models';
 import { PageEvent } from '@angular/material/paginator';
 import { Store } from '@ngrx/store';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-products-list',
@@ -34,8 +35,10 @@ export class ProductsListComponent implements OnInit {
     this.productsSubject$.next({ page: this.pageNumber, size: this.pageSize });
   }
 
-  applyFilters(filters: ProductFilter): void {
-    let filtered = this.products;
+  applyFilters(
+    filters: ProductFilter = { priceRanges: [], name: '', type: null }
+  ): void {
+    const filtered = this.products;
 
     this.productsSubject$.next({
       page: this.pageNumber,
@@ -44,27 +47,30 @@ export class ProductsListComponent implements OnInit {
     });
 
     this.filteredProducts = filtered
-      ?.filter((product) => product.type === filters.type)
-      ?.filter((product) => product.name.includes(filters.name));
+      ?.filter((product) => product.type === filters?.type)
+      ?.filter((product) => product.name.includes(filters?.name as string));
   }
 
   subscribeToProducts(): void {
     this.productsSubject$
       .pipe(
         takeUntilDestroyed(this.destroyRef),
-        switchMap((filters: any) =>
-          this.productsService.filterProducts(
-            filters.page,
-            filters.size,
-            filters.filters
-          )
+        switchMap(
+          (filters: { page: number; size: number; filters: ProductFilter }) =>
+            this.productsService.filterProducts(
+              filters.page,
+              filters.size,
+              filters.filters
+            )
         )
       )
       .subscribe({
-        next: (res: any) => {
-          this.products = res.body;
-          this.filteredProducts = res.body;
-          this.totalItems = res.headers.get('X-Total-Count'); //Json-server bug, nO totalItems in pagination returned, had to get it from response headers
+        next: (res: HttpResponse<Product[]>) => {
+          this.products = res.body || [];
+          this.filteredProducts = res.body || [];
+          this.totalItems = (res.headers.get(
+            'X-Total-Count'
+          ) as unknown) as number; //Json-server bug, nO totalItems in pagination returned, had to get it from response headers
         },
         error: (err) => {
           this.snackBar.open(`Products: ${err.statusText}`);
