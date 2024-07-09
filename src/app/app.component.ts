@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { selectCartItemCount } from './store/selectors/cart.selectors';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState } from './store/state';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'Angular-shop';
+export class AppComponent implements OnInit {
+  title = 'Electronics Store';
+
+  cartItemCount$!: Observable<number>;
+
+  constructor(private store: Store<AppState>) {}
+
+  ngOnInit(): void {
+    this.cartItemCount$ = this.store.select(selectCartItemCount);
+  }
 }

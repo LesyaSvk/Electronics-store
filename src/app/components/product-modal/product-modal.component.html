@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>{{ product.name }}</h2>
+<mat-dialog-content class="dialog-content">
+  <img class="product-image" [src]="product.imageUrl" alt="{{ product.name }}"/>
+  <p class="product-description">{{ product.description }}</p>
+  <h3>Reviews</h3>
+  <ul class="reviews-list">
+    <li *ngFor="let review of product.reviews" class="review-item">
+      <span class="review-user">{{ review.user }}:</span>
+      <span class="review-comment">{{ review.comment }}</span>
+      <span class="review-rating">{{ review.rating }}</span>
+      <mat-icon class="star-icon">star</mat-icon>
+    </li>
+  </ul>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="addToCart()">Add to Cart</button>
+</mat-dialog-actions>

@@ -1,0 +1,20 @@
+<div *ngIf="cartItems$ | async as cartItems" class="cart-wrap">
+  <ng-container *ngIf="cartItems.length; else emptyCart">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-item-image"/>
+      <div class="cart-item-details">
+        <h3 class="cart-item-name">{{ item.name }}</h3>
+        <p class="cart-item-price">Price: {{ item.price | currency }}</p>
+        <p class="cart-item-rating">Rating: {{ item.rating }}</p>
+        <p class="cart-item-description">{{ item.description }}</p>
+      </div>
+      <mat-icon class="cart-item-remove" (click)="removeProduct(item)">delete</mat-icon>
+    </div>
+    <div class="cart-total">
+      <p>Total price: {{ cartTotalPrice$ | async | currency }}</p>
+    </div>
+  </ng-container>
+</div>
+<ng-template #emptyCart>
+  <p class="empty-cart">Your cart is empty</p>
+</ng-template>

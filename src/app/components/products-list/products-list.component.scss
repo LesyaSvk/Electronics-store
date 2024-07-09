@@ -1,0 +1,14 @@
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  width: calc(33.33% - 20px);
+}

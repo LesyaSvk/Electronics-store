@@ -1,0 +1,76 @@
+.product-card {
+  max-width: 400px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  mat-card-header {
+    display: flex;
+    align-items: center;
+
+    .product-image {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+
+    .mat-card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .mat-card-subtitle {
+      font-size: 16px;
+      color: #666;
+      margin: 0;
+    }
+  }
+
+  .product-description {
+    margin: 16px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+  }
+
+  button.mat-button {
+    background-color: #2196f3;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0d8bf0;
+    }
+  }
+}

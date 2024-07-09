@@ -1,0 +1,382 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "name": "Smart TV",
+      "price": 799.99,
+      "rating": 4.5,
+      "type": "TVs",
+      "imageUrl": "https://m.media-amazon.com/images/I/81R3dLptKcL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Enjoy high-definition clarity with this smart TV. Perfect for streaming movies and shows.",
+      "reviews": [
+        {
+          "user": "User1",
+          "rating": 5,
+          "comment": "Great TV, excellent picture quality!"
+        },
+        {
+          "user": "User2",
+          "rating": 4,
+          "comment": "Good value for the price."
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Smartphone",
+      "price": 599.99,
+      "rating": 4.2,
+      "type": "Phones",
+      "imageUrl": "https://m.media-amazon.com/images/I/613cvL2ZYHL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Stay connected with this powerful smartphone. Features include a high-resolution camera and long-lasting battery.",
+      "reviews": [
+        {
+          "user": "User3",
+          "rating": 4.5,
+          "comment": "Excellent phone, fast performance."
+        },
+        {
+          "user": "User4",
+          "rating": 3.8,
+          "comment": "Decent phone, but battery life could be better."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Gaming Console",
+      "price": 399.99,
+      "rating": 4.7,
+      "type": "Video Games",
+      "imageUrl": "https://m.media-amazon.com/images/I/71f-qrZPMrL._AC_SX679_.jpg",
+      "description": "Immerse yourself in the world of gaming with this advanced gaming console. Supports the latest games and features.",
+      "reviews": [
+        {
+          "user": "User5",
+          "rating": 5,
+          "comment": "Awesome console, graphics are top-notch!"
+        },
+        {
+          "user": "User6",
+          "rating": 4.5,
+          "comment": "Great gaming experience overall."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Refrigerator",
+      "price": 999.99,
+      "rating": 4.0,
+      "type": "Appliances",
+      "imageUrl": "https://m.media-amazon.com/images/I/71xfvuzzV+L._AC_SX342_SY445_.jpg",
+      "description": "Keep your food fresh and organized with this spacious refrigerator. Energy-efficient design.",
+      "reviews": [
+        {
+          "user": "User7",
+          "rating": 4.2,
+          "comment": "Good refrigerator, plenty of storage space."
+        },
+        {
+          "user": "User8",
+          "rating": 3.5,
+          "comment": "Average performance, but meets basic needs."
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Headphones",
+      "price": 149.99,
+      "rating": 4.5,
+      "type": "Audio",
+      "imageUrl": "https://m.media-amazon.com/images/I/71KbTAWLTNL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Enjoy immersive audio with these comfortable and stylish headphones. Perfect for music lovers.",
+      "reviews": [
+        {
+          "user": "User9",
+          "rating": 4.8,
+          "comment": "Excellent sound quality, comfortable to wear."
+        },
+        {
+          "user": "User10",
+          "rating": 4.0,
+          "comment": "Good value for money, sound could be more balanced."
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Laptop",
+      "price": 1299.99,
+      "rating": 4.3,
+      "type": "Computers",
+      "imageUrl": "https://m.media-amazon.com/images/I/61oAh3XrX+L._AC_SY300_SX300_.jpg",
+      "description": "Powerful laptop with high-resolution display and fast processing speed. Ideal for work and play.",
+      "reviews": [
+        {
+          "user": "User11",
+          "rating": 4.6,
+          "comment": "Great laptop, very fast and reliable."
+        },
+        {
+          "user": "User12",
+          "rating": 4.0,
+          "comment": "Good performance, but a bit expensive."
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Smartwatch",
+      "price": 199.99,
+      "rating": 4.1,
+      "type": "Wearables",
+      "imageUrl": "https://m.media-amazon.com/images/I/819CwRIckoL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
+      "description": "Stay connected on the go with this stylish smartwatch. Tracks fitness and health metrics.",
+      "reviews": [
+        {
+          "user": "User13",
+          "rating": 4.2,
+          "comment": "Nice watch, good features."
+        },
+        {
+          "user": "User14",
+          "rating": 3.9,
+          "comment": "Decent watch, but the battery life is short."
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Tablet",
+      "price": 499.99,
+      "rating": 4.4,
+      "type": "Tablets",
+      "imageUrl": "https://m.media-amazon.com/images/I/61fgc1OW1ZL._AC_SL1000_.jpg",
+      "description": "Portable and powerful tablet with a high-resolution display. Perfect for entertainment and productivity.",
+      "reviews": [
+        {
+          "user": "User15",
+          "rating": 4.7,
+          "comment": "Excellent tablet, very versatile."
+        },
+        {
+          "user": "User16",
+          "rating": 4.2,
+          "comment": "Good tablet, but could use more storage."
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Digital Camera",
+      "price": 749.99,
+      "rating": 4.6,
+      "type": "Cameras",
+      "imageUrl": "https://m.media-amazon.com/images/I/71ALzxm84uL.__AC_SY300_SX300_QL70_FMwebp_.jpg",
+      "description": "Capture stunning photos with this high-resolution digital camera. Features advanced settings and modes.",
+      "reviews": [
+        {
+          "user": "User17",
+          "rating": 4.8,
+          "comment": "Amazing camera, very high quality."
+        },
+        {
+          "user": "User18",
+          "rating": 4.3,
+          "comment": "Great camera, but a bit pricey."
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Bluetooth Speaker",
+      "price": 99.99,
+      "rating": 4.5,
+      "type": "Audio",
+      "imageUrl": "https://m.media-amazon.com/images/I/816OdoKncpL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Portable Bluetooth speaker with excellent sound quality. Perfect for parties and outdoor activities.",
+      "reviews": [
+        {
+          "user": "User19",
+          "rating": 4.6,
+          "comment": "Great sound, very portable."
+        },
+        {
+          "user": "User20",
+          "rating": 4.1,
+          "comment": "Good speaker, but the battery life could be better."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Microwave Oven",
+      "price": 199.99,
+      "rating": 4.0,
+      "type": "Appliances",
+      "imageUrl": "https://m.media-amazon.com/images/I/61iEAjl09SL._AC_SL1000_.jpg",
+      "description": "Quick and easy cooking with this high-power microwave oven. Features multiple settings and timer.",
+      "reviews": [
+        {
+          "user": "User21",
+          "rating": 4.2,
+          "comment": "Very convenient and easy to use."
+        },
+        {
+          "user": "User22",
+          "rating": 3.8,
+          "comment": "Good microwave, but a bit noisy."
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Smart Thermostat",
+      "price": 249.99,
+      "rating": 4.3,
+      "type": "Smart Home",
+      "imageUrl": "https://m.media-amazon.com/images/I/51U1jXuTPVL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Control your home temperature with this smart thermostat. Energy-efficient and easy to use.",
+      "reviews": [
+        {
+          "user": "User23",
+          "rating": 4.5,
+          "comment": "Great device, very user-friendly."
+        },
+        {
+          "user": "User24",
+          "rating": 4.0,
+          "comment": "Good thermostat, but a bit expensive."
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Air Purifier",
+      "price": 299.99,
+      "rating": 4.2,
+      "type": "Appliances",
+      "imageUrl": "https://m.media-amazon.com/images/I/71lTuFw8I8L.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Keep your indoor air clean and fresh with this air purifier. Features multiple filter settings.",
+      "reviews": [
+        {
+          "user": "User25",
+          "rating": 4.4,
+          "comment": "Very effective, good for allergies."
+        },
+        {
+          "user": "User26",
+          "rating": 4.0,
+          "comment": "Works well, but a bit noisy."
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Electric Kettle",
+      "price": 49.99,
+      "rating": 4.5,
+      "type": "Appliances",
+      "imageUrl": "https://m.media-amazon.com/images/I/51EcND+lspL._AC_SY300_SX300_.jpg",
+      "description": "Boil water quickly and efficiently with this electric kettle. Features auto shut-off and temperature control.",
+      "reviews": [
+        {
+          "user": "User27",
+          "rating": 4.6,
+          "comment": "Heats up quickly, very convenient."
+        },
+        {
+          "user": "User28",
+          "rating": 4.3,
+          "comment": "Good kettle, but could be more durable."
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Smart TV++",
+      "price": 799.99,
+      "rating": 5.0,
+      "type": "TVs",
+      "imageUrl": "https://m.media-amazon.com/images/I/81SyjXgZhRL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Enjoy high-definition clarity with this smart TV. Perfect for streaming movies and shows.",
+      "reviews": [
+        {
+          "user": "User1",
+          "rating": 5,
+          "comment": "Great TV, excellent picture quality!"
+        },
+        {
+          "user": "User2",
+          "rating": 4,
+          "comment": "Good value for the price."
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Smartphone2",
+      "price": 599.99,
+      "rating": 5.0,
+      "type": "Phones",
+      "imageUrl": "https://m.media-amazon.com/images/I/61OPbXNhUmL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Stay connected with this powerful smartphone. Features include a high-resolution camera and long-lasting battery.",
+      "reviews": [
+        {
+          "user": "User3",
+          "rating": 4.5,
+          "comment": "Excellent phone, fast performance."
+        },
+        {
+          "user": "User4",
+          "rating": 3.8,
+          "comment": "Decent phone, but battery life could be better."
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Gaming Console",
+      "price": 399.99,
+      "rating": 4.7,
+      "type": "Video Games",
+      "imageUrl": "https://m.media-amazon.com/images/I/41g-GMZSevL._SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "Immerse yourself in the world of gaming with this advanced gaming console. Supports the latest games and features.",
+      "reviews": [
+        {
+          "user": "User5",
+          "rating": 5,
+          "comment": "Awesome console, graphics are top-notch!"
+        },
+        {
+          "user": "User6",
+          "rating": 4.5,
+          "comment": "Great gaming experience overall."
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Refrigerator",
+      "price": 999.99,
+      "rating": 4.0,
+      "type": "Appliances",
+      "imageUrl": "https://m.media-amazon.com/images/I/810Puf9WtoL.__AC_SY445_SX342_QL70_FMwebp_.jpgn ",
+      "description": "Keep your food fresh and organized with this spacious refrigerator. Energy-efficient design.",
+      "reviews": [
+        {
+          "user": "User7",
+          "rating": 4.2,
+          "comment": "Good refrigerator, plenty of storage space."
+        },
+        {
+          "user": "User8",
+          "rating": 3.5,
+          "comment": "Average performance, but meets basic needs."
+        }
+      ]
+    }
+  ]
+}

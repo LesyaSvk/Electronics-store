@@ -1,0 +1,38 @@
+<div class="filters-wrap">
+  <div class="filters-container">
+    <div class="filter">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Search..."
+          [(ngModel)]="productName"
+          (change)="applyFilters()"
+        />
+      </mat-form-field>
+    </div>
+    <div class="filter">
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select
+          [(ngModel)]="selectedType"
+          (selectionChange)="applyFilters()"
+        >
+          <mat-option *ngFor="let type of types" [value]="type">
+            {{ type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="price-filters">
+      <label *ngFor="let price of priceRanges" class="price-filter">
+        <input
+          type="checkbox"
+          name="price-range"
+          [(ngModel)]="price.selected"
+          (change)="onChange(price)"
+        />
+        {{ price.label }}
+      </label>
+    </div>
+  </div>
+</div>

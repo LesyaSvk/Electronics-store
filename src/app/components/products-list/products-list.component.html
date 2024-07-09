@@ -1,0 +1,23 @@
+<div class="filter-container">
+  <app-filters (filtersChanged)="applyFilters($event)"></app-filters>
+</div>
+
+<div class="product-grid">
+  <ng-container *ngIf="filteredProducts?.length; else noProducts">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </ng-container>
+  <ng-template #noProducts>
+    <p>There's no available products, try to change your filter criteria.</p>
+  </ng-template>
+</div>
+
+<mat-paginator
+  [length]="totalItems"
+  [pageSize]="pageSize"
+  (page)="pageChange($event)"
+  aria-label="Select page"
+>
+</mat-paginator>
+
