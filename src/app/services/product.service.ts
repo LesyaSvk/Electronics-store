@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../environments/environment';
 import { Product, ProductFilter } from '../models';
-import {
-  composeNameFilterParams,
-  composePriceFilterParams,
-  composeTypeFilterParams,
-} from '../utils';
 
 @Injectable({
   providedIn: 'root',
@@ -23,25 +18,27 @@ export class ProductService {
     pageSize = 10,
     filters?: ProductFilter
   ): Observable<HttpResponse<Product[]>> {
-    const rangeFilterParams = filters?.priceRanges
-      ? composePriceFilterParams(filters.priceRanges)
-      : '';
+    let params = new HttpParams()
+      .set('_page', pageNumber.toString())
+      .set('_limit', pageSize.toString());
 
-    const nameFilterParams = filters?.name
-      ? composeNameFilterParams(filters.name)
-      : '';
+    if (filters?.priceRange) {
+      params = params
+        .set('price_gte', filters.priceRange.min.toString())
+        .set('price_lte', filters.priceRange.max.toString());
+    }
 
-    const typeFilterParams = filters?.type
-      ? composeTypeFilterParams(filters.type)
-      : '';
+    if (filters?.type) {
+      params = params.set('type_like', filters.type);
+    }
 
-    return this._http.get<Product[]>(
-      `${this._url}/products?` +
-        nameFilterParams +
-        typeFilterParams +
-        rangeFilterParams +
-        `_page=${pageNumber}&_limit=${pageSize}`,
-      { observe: 'response' }
-    );
+    if (filters?.name) {
+      params = params.set('name_like', filters.name);
+    }
+
+    return this._http.get<Product[]>(`${this._url}/products?`, {
+      observe: 'response',
+      params,
+    });
   }
 }

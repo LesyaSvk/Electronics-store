@@ -15,7 +15,7 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class ProductsListComponent implements OnInit {
   products: Product[] = [];
-  filteredProducts: Product[] = [];
+  filteredProducts: Product[] | undefined = [];
 
   pageNumber = 1;
   pageSize = 10;
@@ -35,9 +35,7 @@ export class ProductsListComponent implements OnInit {
     this.productsSubject$.next({ page: this.pageNumber, size: this.pageSize });
   }
 
-  applyFilters(
-    filters: ProductFilter = { priceRanges: [], name: '', type: null }
-  ): void {
+  applyFilters(filters: ProductFilter = { name: '', type: null }): void {
     const filtered = this.products;
 
     this.productsSubject$.next({

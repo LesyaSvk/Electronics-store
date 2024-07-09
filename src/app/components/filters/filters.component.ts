@@ -30,15 +30,18 @@ export class FiltersComponent {
   }
 
   applyFilters(): void {
-    const selectedPriceRanges = this.priceRanges
-      .filter((price) => price.selected)
-      .map((price) => price.range);
+    const selectedPriceRange = this.priceRanges.find((price) => price.selected);
 
     this.filtersChanged.emit({
       name: this.productName,
       type:
         this.selectedType === ProductTypeEnum.ALL ? null : this.selectedType,
-      priceRanges: selectedPriceRanges.length ? selectedPriceRanges : null,
+      priceRange: selectedPriceRange?.range?.length
+        ? {
+            min: selectedPriceRange?.range[0] as number,
+            max: selectedPriceRange?.range[1] as number,
+          }
+        : null,
     });
   }
 }

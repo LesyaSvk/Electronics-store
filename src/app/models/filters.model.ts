@@ -1,7 +1,12 @@
 export interface ProductFilter {
-  priceRanges: number[][] | null;
+  priceRange?: PriceRange | null;
   name: string;
   type: ProductTypeEnum | null;
+}
+
+export interface PriceRange {
+  min: number;
+  max: number;
 }
 
 export enum ProductTypeEnum {
@@ -17,9 +22,4 @@ export interface PriceRangeOptions {
   label: string;
   selected: boolean;
   range: number[];
-}
-
-export interface PageFilter {
-  page: number;
-  size: number;
 }
